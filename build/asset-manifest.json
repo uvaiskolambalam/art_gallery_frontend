@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/static/css/main.743f41fa.css",
+    "main.js": "/static/js/main.0a78c31b.js",
+    "static/media/jishnu.jpg": "/static/media/jishnu.148192829e9fb223a569.jpg",
+    "static/media/siraju.jpg": "/static/media/siraju.0522156517565ca5c81a.jpg",
+    "static/media/riyas.jpg": "/static/media/riyas.9ad447d44ba745020ee7.jpg",
+    "static/media/cover.jpg": "/static/media/cover.d179a841bab0819d0afd.jpg",
+    "static/media/azeez kolambalam.jpg": "/static/media/azeez kolambalam.290b63fc8aac1fdd65a0.jpg",
+    "static/media/otp.gif": "/static/media/otp.e7c1123632f299d4914a.gif",
+    "static/media/one-4.jpg": "/static/media/one-4.1983446dd85d3b0a4860.jpg",
+    "static/media/Signup-image.png": "/static/media/Signup-image.6d0c33b937cfe15fed84.png",
+    "static/media/one-2.jpg": "/static/media/one-2.6eeae32df61c066045f0.jpg",
+    "static/media/bg-image.jpeg": "/static/media/bg-image.a9fa6f244fc31247d74e.jpeg",
+    "static/media/logo-with-name.png": "/static/media/logo-with-name.87cb17bd94b75b49337a.png",
+    "static/media/settings.svg": "/static/media/settings.942ab870d1696e112c8d633c5051699a.svg",
+    "index.html": "/index.html",
+    "static/media/save.svg": "/static/media/save.8d4fae64a559a81d341891e44c183fc8.svg",
+    "static/media/friends.svg": "/static/media/friends.228be5eb076c2bd028aca5fec6e4e318.svg",
+    "static/media/chat-dots.svg": "/static/media/chat-dots.618db13d9e54539191d1dac7436e104b.svg",
+    "static/media/logout.svg": "/static/media/logout.e06b15389541597534bde9cf50a92aa8.svg",
+    "static/media/chat.svg": "/static/media/chat.e8e343f20480541958655629098ca9b1.svg",
+    "static/media/report.svg": "/static/media/report.28002f45ca77a7b373c74dcd1f05f09a.svg",
+    "static/media/heart.svg": "/static/media/heart.27cf625b15dd614828adb40336c2e861.svg",
+    "static/media/posts.svg": "/static/media/posts.c12067d9e32defa2209ab35828d0e5fc.svg",
+    "static/media/home.svg": "/static/media/home.1503d524ceced87858816d2ac5a66d12.svg",
+    "static/media/person.svg": "/static/media/person.b87141ee2ebc69697c380acaecf5f5e5.svg",
+    "static/media/send.svg": "/static/media/send.7d8ecc6d7bc564740c8ece2eec3b3d1a.svg",
+    "static/media/Profile img.svg": "/static/media/Profile img.0cc99cddde470841356b9e14e5682408.svg",
+    "static/media/share-fill.svg": "/static/media/share-fill.6eb8501a42b0e30195033ae40739d87e.svg",
+    "static/media/three-dots.svg": "/static/media/three-dots.ca64f273c11e0ccada8d03c1e81798a1.svg",
+    "main.743f41fa.css.map": "/static/css/main.743f41fa.css.map",
+    "main.0a78c31b.js.map": "/static/js/main.0a78c31b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.743f41fa.css",
+    "static/js/main.0a78c31b.js"
+  ]
+}
