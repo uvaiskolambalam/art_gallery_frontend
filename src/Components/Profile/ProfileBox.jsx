@@ -101,7 +101,7 @@ const ProfileBox = ({ userID, getPosts }) => {
           </div>
           {visitor ? null : (
             <div className="controles">
-              <button>Add Story</button>
+              {/* <button>Add Story</button> */}
 
               <NavLink to="/editProfile">
                 <button>Edit Profile</button>

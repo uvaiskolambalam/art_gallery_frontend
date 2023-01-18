@@ -1,12 +1,19 @@
 import React from "react";
 import "./AdminHomeComponent.css";
 import { useNavigate } from "react-router-dom";
+import AdminDashBoard from "../AdminDashBoard/AdminDashBoard";
 
 const AdminHomeComponent = ({ posts, users }) => {
   const navigate = useNavigate();
 
   return (
     <div className="AdminHomeComponent">
+     
+      <div>
+      <AdminDashBoard posts={posts} users={ users} />
+      </div>
+        
+    
       <div className="AdminHomeComponent-container">
         <div className="containen-title">
           <p>Total Users</p>

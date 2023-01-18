@@ -6,6 +6,16 @@
    
 
 }
+@media screen and (max-width:1024px){
+    .AdminHomeComponent{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    
+}
 .AdminHomeComponent-container{
     background: white;
     height: 218px;

@@ -32,6 +32,34 @@
     gap: 2rem;
 
 }
+.changePasswordContainer{
+    display: flex;
+    gap: .5rem;
+}
+.passwordInput{
+    width: 30%;
+    height: 2.5rem;
+    border-radius: 8px;
+    border-style: none;
+    box-shadow: 0px 0px 5px 2px #888888;
+    background-color:white;
+    -webkit-appearance: none;
+    outline: none;
+    padding-left: .5rem;
+}
+.PasswordButton{
+    border: none;
+    padding: .5rem;
+    color: white;
+    border-radius: 10px;
+}
+.submitButton{
+    background-color: blue;
+}
+.changePassword{
+    background: linear-gradient(to right, darkblue, darkorchid) border-box;
+
+}
 
 .editProfile-details-left {
     display: flex;

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import Datatable from '../../Components/AdminDatatable/Datatable'
 import AdminMenu from '../../Components/AdminMenu/AdminMenu'
 import AdminNavBar from '../../Components/AdminNavBar/AdminNavBar'
 import AdminPostss from '../../Components/AdminPostsComponent/AdminPostsComponent'
@@ -32,7 +33,7 @@ const AdminPosts = () => {
         <AdminMenu />
       </div>
       <div className="AdminHomeUser">
-      
+      {/* <Datatable posts={posts} getPosts={getPosts}  /> */}
           <AdminPostss posts={posts} getPosts={getPosts} />
       </div>
       

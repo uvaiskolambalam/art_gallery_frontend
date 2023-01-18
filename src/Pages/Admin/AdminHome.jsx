@@ -28,6 +28,7 @@ const AdminHome = () => {
       console.log(error);
     }
   };
+  console.log(posts,users,'all data');
   useEffect(() => {
 
     getPosts()

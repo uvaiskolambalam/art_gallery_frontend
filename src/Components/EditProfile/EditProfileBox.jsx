@@ -15,6 +15,7 @@ import EditProfileMoreModal from '../EditProfileMoreModal/EditProfileMoreModal'
 import Url from "../Instence/Base_uel";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
+import toast from "react-hot-toast";
 const EditProfileBox = () => {
 
   const user = useSelector((state) => state.user);
@@ -23,8 +24,11 @@ const EditProfileBox = () => {
   const [render, setRender] = useState(false)
   const [photos, setPhotos] = useState([])
   const [photoFilter, setPhotoFilter] = useState([])
+  const [show, setShow] = useState(false)
+  const [newPassword,setNewPassword]=useState('')
   const dispatch = useDispatch()
   const post = useSelector((state) => state.post);
+  console.log(user,'uerdaat');
 
 
 
@@ -72,6 +76,25 @@ const EditProfileBox = () => {
       setPhotos(filteredData)
     }
   }
+  const handleShow =  () => {
+    setShow(!show)
+  }
+  const handlePassword =async () => {
+    const passwordData = {
+      userId: userId,
+      password:newPassword
+    }
+    const response = await Url.patch('/changePassword', { passwordData })
+    console.log(response.data, 'data');
+    if (response.data.success) {
+      toast.success(response.data.message)
+    } else {
+      toast.error(response.data.message)
+    }
+    setShow(false)
+    setNewPassword("")
+    
+  }
   useEffect(() => {
     getUserDetail()
   }, [])
@@ -106,9 +129,18 @@ const EditProfileBox = () => {
                   <img src={globe} alt="" />
                   <p>{userData.email}</p>
                 </div>
-
-
+                <div className="More-details">
+                
+                  <button className="PasswordButton changePassword" onClick={handleShow}>Change Password</button>
+                </div>
+                {show ?
+                <div className="changePasswordContainer">
+                    <input className="passwordInput" value={newPassword} type="password" onChange={(e)=>setNewPassword(e.target.value)}/>
+                    <button className="PasswordButton submitButton" onClick={handlePassword}>Submit</button>
+                </div>
+                :""}
               </div>
+             
             </div>
             <div className="editProfile-details-one">
               <div className="title-button">

@@ -16,6 +16,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import useOnClickOutside from '../../Helpers/useClickOutside'
 import toast from 'react-hot-toast'
+import Spinner from "../Spinner/Spinner";
 
 const PostBox = ({
   image,
@@ -30,7 +31,9 @@ const PostBox = ({
   createdAt,
   name,
   photo,
-  postmanId
+  postmanId,
+  spinnerShow,
+  setSpinnerShow
 }) => {
   const userPic = useSelector((state) => state.userAllDetails);
   const [like, setLike] = useState(liked);
@@ -42,15 +45,19 @@ const PostBox = ({
   const [savedPost, setSavedPost] = useState(false)
   const currentUserId = currentUser.id
   const menu = useRef(null);
+  // const [spinnerShow,setSpinnerShow]=useState(false)
   useOnClickOutside(menu, () => setPostDots(false));
 
   const handleLike = async () => {
+     setSpinnerShow(true)
+    
     const likeData = {
       userId: userId,
       postId: id,
     };
     updateLike(likeData);
     setLike(!like);
+    
   };
 
 
@@ -90,6 +97,7 @@ const PostBox = ({
     setSavedPost(!savedPost)
     toast.success(response.data.message)
   }
+  // setSpinnerShow(false)
 
   return (
     <>
@@ -140,7 +148,13 @@ const PostBox = ({
         </div>
         <div className="postBox-icons">
           <img src={like ? heartFill : heart} alt="" onClick={handleLike} />
+          <div>
+            {spinnerShow ?
+          <Spinner/>
+              : 
           <p>{likeCount}</p>
+          }
+          </div>
           <img
             src={Chat}
             alt=""
@@ -148,7 +162,7 @@ const PostBox = ({
               setChatIcon(!chatIcon);
             }}
           />
-          <img src={Share} alt="" />
+          {/* <img src={Share} alt="" /> */}
         </div>
         <div>
           <hr />
@@ -181,7 +195,7 @@ const PostBox = ({
               type="text"
               placeholder="Text here..."
               name="comment"
-              value={comment}
+              value={comment ? comment : ""}
               onChange={commentInput}
               id="commentInput"
             />

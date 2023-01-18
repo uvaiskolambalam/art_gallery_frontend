@@ -6,8 +6,14 @@ import nonBlokedUserIcon from "../../Assets/nonBlock.png";
 
 const AdminUser = ({ users, getUsers }) => {
   const updateBlock = async (userId) => {
-    await Url.patch("/admin/updateBlock", { userId });
-    getUsers();
+    const confirmBox = window.confirm(
+      "Do you really want to delete this Crumb?"
+    )
+    if (confirmBox === true) {
+      
+      await Url.patch("/admin/updateBlock", { userId });
+      getUsers();
+    }
   };
 
   return (
@@ -26,16 +32,16 @@ const AdminUser = ({ users, getUsers }) => {
             <td>{item.name}</td>
             <td>{item.email}</td>
             <td>{item.block ? "Bloked" : "Ordinary"}</td>
-            <td className="blockButtonContainer">
+            <td className="">
               <button
-                className="userblock-btn"
+                className={item.block ? "blockButtonContainer postButton"  : "postBlock postButton"}
                 onClick={() => updateBlock(item?._id)}
               >
                 {" "}
                 {item.block ? (
-                  <img src={nonBlokedUserIcon} alt="" />
+                  "Unblock"
                 ) : (
-                  <img src={blokedUserIcon} alt="" />
+                  "Block"
                 )}
               </button>
             </td>

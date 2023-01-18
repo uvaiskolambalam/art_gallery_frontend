@@ -38,7 +38,7 @@ const Messenger = () => {
     },[])
 
     useEffect(()=>{
-        socket.current=io("ws://localhost:8900")
+        socket.current=io("ws://localhost:5000")
         socket.current.on("getMessage",data=>{
             setArrivalNewMessage({
                 sender:data.senderId,
@@ -157,7 +157,7 @@ const Messenger = () => {
                     
                 </div>
                 <div className="chatBoxBottom">
-                    <textarea onChange={(e)=>setNewMessage(e.target.value)} value={newMessage} className='chatMessageInput' placeholder='Message'></textarea>
+                    <textarea required  onChange={(e)=>setNewMessage(e.target.value)} value={newMessage} className='chatMessageInput' placeholder='Message'></textarea>
                     <div className='chatSubmitButtonContainer'>
                     <button onClick={handleSubmit} className='chatSubmitButton'><img  src={Send} alt="" /></button>
                     </div>

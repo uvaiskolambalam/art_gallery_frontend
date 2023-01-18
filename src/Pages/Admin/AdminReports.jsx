@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import Datatable from '../../Components/AdminDatatable/Datatable'
 import AdminMenu from '../../Components/AdminMenu/AdminMenu'
 import AdminNavBar from '../../Components/AdminNavBar/AdminNavBar'
 import AdminReport from '../../Components/AdminReport/AdminReport'
@@ -12,6 +13,7 @@ const AdminReports = () => {
     try {
       const response = await Url.get('/admin/getReports')
       setReports(response.data)
+      
     } catch (error) {
       console.log(error);
     }
@@ -29,7 +31,7 @@ const AdminReports = () => {
           <AdminMenu />
         </div>
         <div className="AdminHomeUser">
-
+          
           <AdminReport reports={reports} getReports={getReports} />
         </div>
 

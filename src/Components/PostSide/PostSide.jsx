@@ -5,10 +5,12 @@ import PostBox from "../PostBox/PostBox";
 import "./PostSide.css";
 import Url from "../Instence/Base_uel";
 import { useState } from "react";
+import MenuBox from "../MenuBox/MenuBox";
 const PostSide = () => {
   const user = useSelector((state) => state.user);
   const [post, setPost] = useState([]);
   const [render, setRender] = useState(false);
+  const [spinnerShow,setSpinnerShow]=useState(false)
   const userId = user.id;
 
 
@@ -20,11 +22,14 @@ const PostSide = () => {
 
     setPost(response.data.timeLinePost);
   };
-
+ 
   const updateLike = async (likeData) => {
+    setSpinnerShow(true)
 
     await Url.post("/like", likeData);
+
     getPosts()
+    setSpinnerShow(false)
   }
   const updateComment = async (commentData) => {
     await Url.post('/addComment', commentData)
@@ -65,10 +70,16 @@ const PostSide = () => {
             name={item.userId.user_name}
             photo={item.userId.profileImage}
             postmanId={item.userId._id}
+            spinnerShow={spinnerShow}
+            setSpinnerShow={setSpinnerShow}
 
           />
         );
       })}
+      <div>
+
+     
+      </div>
     </div>
   );
 };
