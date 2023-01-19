@@ -7,10 +7,12 @@ import { useState } from "react";
 import { useEffect } from "react";
 import followIcon from '../../Assets/follow.png'
 import profile from "../../Assets/Profile img.svg";
+import { useNavigate } from "react-router-dom";
 
 const GroupBox = ({ user_name, followsId, followers, updateFollow, profileImage }) => {
   const user = useSelector((state) => state.user);
   const [follow, setFollow] = useState(followers)
+  const navigate=useNavigate()
 
 
 
@@ -25,6 +27,11 @@ const GroupBox = ({ user_name, followsId, followers, updateFollow, profileImage 
     setFollow(!follow)
 
   }
+  const getUserDetails = async () => {
+    navigate(`/profile/${followsId}`,)
+
+
+  }
 
 
   return (
@@ -34,7 +41,7 @@ const GroupBox = ({ user_name, followsId, followers, updateFollow, profileImage 
           <img src={profileImage ? profileImage : profile} alt="" />
         </div>
 
-        <div>
+        <div onClick={getUserDetails}>
           <p className="group-box-grouName">{user_name}</p>
         </div>
         <div className="follow-button">

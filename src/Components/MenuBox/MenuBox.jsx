@@ -56,10 +56,10 @@ const MenuBox = () => {
           <p>Saved Posts</p>
         </div>
         </NavLink>
-        <div className='MenuBox-item'>
+        {/* <div className='MenuBox-item'>
           <img src={SettingsIcon} alt="" />
           <p>Settings</p>
-        </div>
+        </div> */}
         <div className='MenuBox-item' onClick={logout}>
           <img src={LogoutIcon} alt="" />
           <p>Logout</p>

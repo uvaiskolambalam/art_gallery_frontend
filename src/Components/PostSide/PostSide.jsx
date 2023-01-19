@@ -5,7 +5,6 @@ import PostBox from "../PostBox/PostBox";
 import "./PostSide.css";
 import Url from "../Instence/Base_uel";
 import { useState } from "react";
-import MenuBox from "../MenuBox/MenuBox";
 const PostSide = () => {
   const user = useSelector((state) => state.user);
   const [post, setPost] = useState([]);
@@ -52,6 +51,7 @@ const PostSide = () => {
       </div>
       <AddPost setRender={setRender} />
 
+     
       {post.map((item, i) => {
         return (
           <PostBox

@@ -3,6 +3,7 @@ import "./AddPost.css";
 import addPhoto from "../../Assets/file-image.png";
 import AntdModal from "../AntdModal/AntdModal";
 import { useSelector } from "react-redux";
+import Spinner from "../Spinner/Spinner";
 
 const AddPost = ({ setRender }) => {
   const userPic = useSelector((state) => state.userAllDetails);
@@ -17,6 +18,7 @@ const AddPost = ({ setRender }) => {
 
           <div className="AddPost-input">
             <AntdModal setRender={setRender} />
+            
           </div>
           <div className="AddPost-imageIcon">
             <img src={addPhoto} alt="" />
