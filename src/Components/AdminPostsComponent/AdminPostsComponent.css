@@ -33,6 +33,9 @@
     top: 20%;
     left: 40%;
     opacity: none;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
     
 }
 .post-box-container{
